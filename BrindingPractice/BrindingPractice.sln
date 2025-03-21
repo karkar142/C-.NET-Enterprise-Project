@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrindingPractice", "BrindingPractice.csproj", "{F35ED9A9-2D8D-4262-9178-FB49A8DA2EB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F35ED9A9-2D8D-4262-9178-FB49A8DA2EB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F35ED9A9-2D8D-4262-9178-FB49A8DA2EB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F35ED9A9-2D8D-4262-9178-FB49A8DA2EB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F35ED9A9-2D8D-4262-9178-FB49A8DA2EB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B369EA5-D829-42C1-98B8-F58AE13637A6}
+	EndGlobalSection
+EndGlobal
