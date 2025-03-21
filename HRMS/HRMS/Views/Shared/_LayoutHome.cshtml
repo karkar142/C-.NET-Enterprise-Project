@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HR Pro - Advanced Human Resource Management System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .carousel-item {
+            height: 500px;
+        }
+
+            .carousel-item:nth-child(1) {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?w=1200&h=500&fit=crop) center/cover no-repeat;
+            }
+
+            .carousel-item:nth-child(2) {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/4344860/pexels-photo-4344860.jpeg?w=1200&h=500&fit=crop) center/cover no-repeat;
+            }
+
+            .carousel-item:nth-child(3) {
+                background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://images.pexels.com/photos/4344880/pexels-photo-4344880.jpeg?w=1200&h=500&fit=crop) center/cover no-repeat;
+            }
+
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #0d6efd;
+        }
+
+        .feature-card {
+            transition: transform 0.3s;
+            height: 100%;
+            border-top: 4px solid #0d6efd;
+        }
+
+            .feature-card:hover {
+                transform: translateY(-10px);
+            }
+
+        .section-heading {
+            position: relative;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+            .section-heading:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 50px;
+                height: 3px;
+                background-color: #0d6efd;
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header with App Name -->
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">CloudHRMS</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Position
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Position" asp-action="List">List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Department
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Department" asp-action="List">List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Employee
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Employee" asp-action="Index">List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Attendance Policy
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="AttendancePolicy" asp-action="List">List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    My Shift Assign
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="ShiftAssign" asp-action="List">List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    My  Daily Attendance
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="DailyAttendance" asp-action="List">List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    My Attendance
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="AttendanceMaster" asp-action="List">List</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown text-dark">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    My Pay History
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-area="" asp-controller="Payroll" asp-action="List">List</a></li>
+                                </ul>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <partial name="_LoginPartial" />
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+        <!--<div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1><i class="fas fa-people-group me-2"></i>HR Pro</h1>
+                    <p class="mb-0 lead">Advanced Workforce Management Solution</p>
+                </div>
+                <div>
+                    <a href="#features" class="btn btn-outline-light me-2">Features</a>
+                    <a href="#modules" class="btn btn-outline-light me-2">Modules</a>
+                    <a href="#" class="btn btn-primary">Login</a>
+                </div>
+            </div>
+        </div>-->
+   
+
+    <!-- Main Carousel -->
+    <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <!-- First Carousel Item (Fixed Image URL) -->
+            <div class="carousel-item active" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url(https://images.pexels.com/photos/3184287/pexels-photo-3184287.jpeg?w=1200&h=500&fit=crop)
+                center/cover no-repeat;">
+                <div class="overlay-text text-white">
+                    <h2 class="display-4 fw-bold">Advanced Attendance & Shift Management</h2>
+                    <p class="lead">
+                        Track attendance, manage shifts, and automate workforce scheduling in one platform
+                    </p>
+                    <button class="btn btn-primary btn-lg mt-3">Learn More</button>
+                </div>
+            </div>
+
+            <!-- Second Carousel Item (Fixed Quotes in URL) -->
+            <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url(https://images.pexels.com/photos/4344860/pexels-photo-4344860.jpeg?w=1200&h=500&fit=crop)
+                center/cover no-repeat;">
+                <div class="overlay-text text-white">
+                    <h2 class="display-4 fw-bold">Streamlined Organizational Structure</h2>
+                    <p class="lead">Organize departments, positions, and employees with precision</p>
+                    <button class="btn btn-primary btn-lg mt-3">Explore Features</button>
+                </div>
+            </div>
+
+            <!-- Third Carousel Item (Fixed Placeholder Image) -->
+            <div class="carousel-item" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url(https://images.pexels.com/photos/4344880/pexels-photo-4344880.jpeg?w=1200&h=500&fit=crop)
+                center/cover no-repeat;">
+                <div class="overlay-text text-white">
+                    <h2 class="display-4 fw-bold">Integrated Payroll Solution</h2>
+                    <p class="lead">Automate salary calculations with attendance-driven payroll</p>
+                    <button class="btn btn-primary btn-lg mt-3">View System</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+    <!-- App Overview -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="section-heading">HR Pro - Specialized Workforce Management</h2>
+                    <p class="lead">
+                        A complete HR system focused on organizational structure, attendance tracking, and
+                        payroll automation.
+                    </p>
+                    <p>
+                        HR Pro provides advanced tools for managing your workforce with precision. From defining
+                        organizational hierarchies to tracking daily attendance and processing payroll, our system
+                        streamlines complex HR processes while ensuring compliance with labor regulations.
+                    </p>
+                    <div class="d-flex mt-4">
+                        <div class="me-4">
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Automated shift assignments</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Flexible attendance policies</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Department hierarchy management</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Attendance-driven payroll</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Position-based permissions</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="fas fa-check-circle text-success me-2"></i>
+                                <span>Real-time attendance tracking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-md-6 d-flex align-items-center">
+                    <img src="~/api/placeholder/600/400" alt="HR Pro Dashboard" class="img-fluid rounded shadow">
+                </div>-->
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Modules Section -->
+    <section id="modules" class="py-5">
+        <div class="container">
+            <h2 class="section-heading text-center">Core HR Modules</h2>
+            <p class="text-center mb-5">Powerful tools designed to streamline your HR operations</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-sitemap"></i>
+                            </div>
+                            <h4>Organization Structure</h4>
+                            <p>
+                                Manage departments and positions within your company hierarchy. Define reporting
+                                relationships, assign responsibilities, and visualize your organizational chart.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <h4>Employee Management</h4>
+                            <p>
+                                Maintain comprehensive employee profiles with personal details, employment history,
+                                document storage, and position assignments within departments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Shift Management</h4>
+                            <p>
+                                Create and manage multiple shift types with customizable timings. Easily assign shifts to
+                                employees and departments with bulk assignment options.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-heading text-center">Specialized Features</h2>
+            <p class="text-center mb-5">Advanced HR functionality tailored to your business needs</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <h4>Daily Attendance</h4>
+                            <p>
+                                Track employee attendance with multiple clock-in/out options. Monitor late arrivals,
+                                early departures, and absences with automatic policy application.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <h4>Attendance Policy</h4>
+                            <p>
+                                Create custom attendance policies with flexible rules for different employee groups.
+                                Define grace periods, overtime calculations, and absence management protocols.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <h4>Attendance Master</h4>
+                            <p>
+                                Centralized dashboard for attendance management with real-time tracking, exception
+                                handling, and regularization workflows for missed punches.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-invoice-dollar"></i>
+                            </div>
+                            <h4>Integrated Payroll</h4>
+                            <p>
+                                Automated salary calculations based on attendance data, shifts worked, and overtime.
+                                Generate payslips, tax reports, and process bank transfers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <h4>Shift Assignment</h4>
+                            <p>
+                                Flexible shift assignment system allowing for rotation schedules, employee preferences,
+                                and workload balancing across teams and departments.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card feature-card h-100 shadow-sm">
+                        <div class="card-body text-center p-4">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-pie"></i>
+                            </div>
+                            <h4>Analytics & Reporting</h4>
+                            <p>
+                                Comprehensive reports on department performance, attendance patterns, overtime costs, and
+                                payroll expenses to optimize workforce management.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-heading text-center">Trusted by HR Professionals</h2>
+            <p class="text-center mb-5">See what our clients say about HR Pro</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="card">
+                                    <div class="card-body text-center p-5">
+                                        <p class="lead mb-4">
+                                            "The attendance and shift management features in HR Pro
+                                            have dramatically improved our workforce scheduling. We've reduced overtime
+                                            costs by 23% since implementation."
+                                        </p>
+                                        <div>
+                                            <h5 class="mb-1">Michael Chen</h5>
+                                            <p class="text-muted">Operations Director, Manufacturing Solutions Inc.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center p-5">
+                                        <p class="lead mb-4">
+                                            "The integrated payroll system has eliminated calculation
+                                            errors and saved our HR team countless hours. Attendance-based salary
+                                            processing is now completely automated."
+                                        </p>
+                                        <div>
+                                            <h5 class="mb-1">Jessica Williams</h5>
+                                            <p class="text-muted">HR Manager, Global Retail Corp</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item">
+                                <div class="card">
+                                    <div class="card-body text-center p-5">
+                                        <p class="lead mb-4">
+                                            "Managing departments and positions has never been easier.
+                                            HR Pro gives us a clear view of our organizational structure and helps us
+                                            plan future growth effectively."
+                                        </p>
+                                        <div>
+                                            <h5 class="mb-1">Sarah Johnson</h5>
+                                            <p class="text-muted">HR Director, Tech Services Ltd</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-center mt-3">
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0"
+                                    class="bg-primary mx-1 rounded-circle"
+                                    style="width: 10px; height: 10px; border: none;"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"
+                                    class="bg-secondary mx-1 rounded-circle"
+                                    style="width: 10px; height: 10px; border: none;"></button>
+                            <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"
+                                    class="bg-secondary mx-1 rounded-circle"
+                                    style="width: 10px; height: 10px; border: none;"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h2>Ready to Revolutionize Your Workforce Management?</h2>
+                    <p class="lead mb-0">
+                        Join companies that have optimized their HR operations with our specialized
+                        attendance and payroll system.
+                    </p>
+                </div>
+                <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                    <a href="#" class="btn btn-light btn-lg">Request Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h4><i class="fas fa-people-group me-2"></i>HR Pro</h4>
+                    <p>Advanced Workforce Management Solution</p>
+                    <p>&copy; 2025 HR Pro. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <div class="mb-3">
+                        <a href="#" class="text-white me-3"><i class="fas fa-envelope"></i> support@hrpro.com</a>
+                        <a href="#" class="text-white"><i class="fas fa-phone"></i> +1 (555) 123-4567</a>
+                    </div>
+                    <div>
+                        <a href="#" class="btn btn-outline-light btn-sm me-2">
+                            <i class="fas fa-book me-1"></i>Documentation
+                        </a>
+                        <a href="#" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-question-circle me-1"></i>Support
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @* <main role="main">
+        @RenderBody()
+    </main> *@
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+</body>
+
+</html>

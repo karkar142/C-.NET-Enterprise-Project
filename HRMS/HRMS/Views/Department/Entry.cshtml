@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Department Entry";
+}
+
+<h2 class="mb-4">Department Entry</h2>
+
+@{
+    var info = ViewData["info"];
+}
+@if (info != null)
+{
+        <div class="alert @(Convert.ToBoolean(ViewData["Status"]) ? "alert-success" : "alert-danger")" role="alert">
+        @info
+        </div>
+}
+
+<form action="/Department/Entry" method="post">
+    <div class="mb-3">
+        <label class="form-label">Department Code:</label>
+        <input type="text" class="form-control" name="Code" required placeholder="Enter department code">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Description:</label>
+        <input type="text" class="form-control" name="Description" required placeholder="Enter department description">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Extension Phone:</label>
+        <input type="tel" class="form-control" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="ExtensionPhone" required placeholder="Format: 123-45-678">
+        <small class="text-muted">Format: 123-45-678</small>
+    </div>
+
+    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Submit</button>
+    <a href="/Department/list" class="btn btn-outline-primary"><i class="fas fa-list"></i> View List</a>
+</form>

@@ -1,0 +1,37 @@
+﻿<form action="/EmployeeReport/EmployeeDetailReport" method="post">
+    <div class="mb-3">
+        <label class="form-label">From Employee Code </label>
+        <select class="form-select" name="fromEmployeeCode">
+            <!-- FIXED -->
+            <option selected>Open this select menu</option>
+            @foreach (var employee in ViewBag.EmployeeViews)
+            {
+                <option value="@employee.Code">@employee.Code</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">To Employee Code </label>
+        <select class="form-select" name="toEmployeeCode">
+            <!-- FIXED -->
+            <option selected>Open this select menu</option>
+            @foreach (var employee in ViewBag.EmployeeViews)
+            {
+                <option value="@employee.Code">@employee.Code</option>
+            }
+        </select>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <select class="form-select" name="DepartmentCode">
+            <!-- FIXED -->
+            <option selected>Open this select menu</option>
+            @foreach (var department in ViewBag.DepartmentViews)
+            {
+                <option value="@department.Id">@department.Code</option>
+            }
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Download</button>
+    <button type="reset" class="btn btn-primary">Cancel</button>
+</form>

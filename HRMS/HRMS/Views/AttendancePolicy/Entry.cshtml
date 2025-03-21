@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Attendance Policy";
+}
+<h1 class="mb-4">Attendance Policy Entry</h1>
+
+@{
+    var info = ViewData["Info"];
+}
+@if (info != null)
+{
+    <div class="alert @(Convert.ToBoolean(ViewData["Status"]) ? "alert-success" : "alert-danger")" role="alert">
+        @info
+    </div>
+}
+
+<form action="/AttendancePolicy/Entry" method="post" class="p-4 border rounded shadow-sm bg-light">
+    <div class="mb-3">
+        <label class="form-label fw-bold">Name:</label>
+        <input type="text" class="form-control" name="Name" required placeholder="Enter policy name">
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Number of Late Times:</label>
+            <input type="number" class="form-control" name="NumberOfLateTime" min="0" value="0" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Number of Early Out Times:</label>
+            <input type="number" class="form-control" name="NumberOfEarlyOutTime" min="0" value="0" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Deduction in Amount (SGD):</label>
+            <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="text" class="form-control" name="DeductionInAmount" pattern="^\d+(\.\d{1,2})?$" value="0" required placeholder="Enter amount">
+            </div>
+            <small class="text-muted">Only numeric values (e.g., 50 or 50.50).</small>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Deduction in Days:</label>
+            <input type="number" class="form-control" name="DeductionInDay" min="0" value="0" required>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary px-4">Submit</button>
+        <a href="/AttendancePolicy/list" class="btn btn-outline-secondary px-4">View List</a>
+    </div>
+</form>

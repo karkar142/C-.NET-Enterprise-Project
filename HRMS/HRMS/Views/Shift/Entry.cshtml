@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Shift";
+}
+<h1 class="mb-4">Shift Entry</h1>
+
+@{
+    var info = ViewData["Info"];
+}
+@if (info != null)
+{
+    <div class="alert @(Convert.ToBoolean(ViewData["Status"]) ? "alert-success" : "alert-danger")" role="alert">
+        @info
+    </div>
+}
+
+<form action="/Shift/Entry" method="post" class="p-4 border rounded shadow-sm bg-light">
+    <div class="mb-3">
+        <label class="form-label fw-bold">Name:</label>
+        <input type="text" class="form-control" name="Name" required placeholder="Enter Shift Name">
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">InTime:</label>
+            <input type="time" class="form-control" name="InTime"  value="0" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">OutTime:</label>
+            <input type="time" class="form-control" name="OutTime"  value="0" required>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Late After:</label>
+            <input type="time" class="form-control" name="LateAfter" value="0" required>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label class="form-label fw-bold">Early Out Before:</label>
+            <input type="time" class="form-control" name="EarlyOutBefore" value="0" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">AttendancePolicy:</label>
+            <select class="form-select" name="AttendancePolicyID" required>
+                <option value="" selected disabled>Select AttendancePloicy</option>
+                @foreach (var attendancePolicy in ViewBag.AttendancePolicy)
+                {
+                    <option value="@attendancePolicy.Id">@attendancePolicy.Name</option>
+                }
+            </select>
+
+        </div>
+         
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary px-4">Submit</button>
+        <a href="/Shift/list" class="btn btn-outline-secondary px-4">View List</a>
+    </div>
+</form>

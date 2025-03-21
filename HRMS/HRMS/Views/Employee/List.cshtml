@@ -1,0 +1,116 @@
+﻿@model IList<EmployeeViewModel>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="fw-bold text-primary"><i class="fas fa-users me-2"></i> Employee List</h1>
+        @if (User.IsInRole("HR"))
+        {
+            <a href="/Employee/entry" class="btn btn-primary btn-lg">
+                <i class="fas fa-user-plus me-2"></i> Add Employee
+            </a>
+        }
+    </div>
+
+    @if (Model.Count > 0)
+    {
+        <div class="table-responsive rounded shadow-sm bg-white p-3">
+            <table class="table table-hover table-striped table-bordered align-middle text-center">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>DOB</th>
+                        <th>DOE</th>
+                        <th>Address</th>
+                        <th>Basic Salary</th>
+                        <th>Phone</th>
+                        <th>Department</th>
+                        <th>Position</th>
+                        <th>DOR</th>
+                        @if (User.IsInRole("HR"))
+                        {
+                            <th>Action</th>
+                        }
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = 1;
+                    }
+                    @foreach (var item in Model)
+                    {
+                        <tr class="table-light">
+                            <td class="fw-bold">@i</td>
+                            <td><span class="badge bg-secondary">@item.Code</span></td>
+                            <td class="fw-semibold">@item.Name</td>
+                            <td><a href="mailto:@item.Email" class="text-decoration-none">@item.Email</a></td>
+                            <td>
+                                <span class="badge @(item.Gender == "Male" ? "bg-primary" : "bg-dark")">@item.Gender</span>
+                            </td>
+                            <td>@item.DOB.ToString("yyyy-MM-dd")</td>
+                            <td>@item.DOE.ToString("yyyy-MM-dd")</td>
+                            <td>@item.Address</td>
+                            <td>
+                                <span class="badge bg-success">$@item.BasicSalary.ToString("N2")</span>
+                            </td>
+                            <td>@item.PhoneNo</td>
+                            <td>@item.DepartmentInfo</td>
+                            <td>@item.PositionInfo</td>
+                            <td>
+                                @if (@item.DOR.HasValue)
+                                {
+                                    @item.DOR?.ToString("yyyy-MM-dd")
+                                }
+                                else
+                                {
+                                    <span>Still Working</span>
+                                }
+                            </td>
+                            @if (User.IsInRole("HR"))
+                            {
+                                <td>
+                                    <a href="/Employee/edit?id=@item.Id" class="btn btn-sm btn-outline-success">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="/Employee/delete?id=@item.Id"
+                                       onclick="return confirm('Are you sure you want to delete this record?')"
+                                       class="btn btn-sm btn-outline-danger">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+                                </td>
+                            }
+                            
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-danger text-center" role="alert">
+            <i class="fas fa-exclamation-circle"></i> No employee records found.
+        </div>
+    }
+</div>
+
+<style>
+    .table-hover tbody tr:hover {
+        background-color: rgba(0, 123, 255, 0.1) !important;
+    }
+
+    .btn-outline-success:hover {
+        background-color: #198754;
+        color: white;
+    }
+
+    .btn-outline-danger:hover {
+        background-color: #dc3545;
+        color: white;
+    }
+</style>

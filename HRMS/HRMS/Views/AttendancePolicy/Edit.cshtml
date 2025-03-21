@@ -1,0 +1,67 @@
+﻿@model AttendancePolicyViewModel
+
+<h1 class="mb-4">Edit Attendance Policy</h1>
+
+@{
+    var info = ViewData["Info"];
+}
+@if (info != null)
+{
+    <div class="alert @(Convert.ToBoolean(ViewData["Status"]) ? "alert-success" : "alert-danger")" role="alert">
+        @info
+    </div>
+}
+
+<form action="/AttendancePolicy/update" method="post" class="needs-validation" novalidate>
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Name:</label>
+        <input type="text" class="form-control" name="Name" value="@Model.Name" required>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Number of Late Times:</label>
+            <input type="number" class="form-control" name="NumberOfLateTime" min="0" value="@Model.NumberOfLateTime" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Number of Early Out Times:</label>
+            <input type="number" class="form-control" name="NumberOfEarlyOutTime" min="0" value="@Model.NumberOfEarlyOutTime" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Deduction Amount (SGD):</label>
+            <input type="text" class="form-control" name="DeductionInAmount" pattern="^\d+$" value="@Model.DeductionInAmount" required>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Deduction in Days:</label>
+            <input type="number" class="form-control" name="DeductionInDay" min="0" value="@Model.DeductionInDay" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Created On:</label>
+            <input type="text" class="form-control" value="@Model.CreatedOn" readonly>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label class="form-label">Last Modified On:</label>
+            <input type="text" class="form-control" value="@Model.UpdatedOn" readonly>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-save"></i> Update
+        </button>
+        <a href="/AttendancePolicy/list" class="btn btn-outline-primary">
+            <i class="fas fa-list"></i> Back to List
+        </a>
+    </div>
+</form>

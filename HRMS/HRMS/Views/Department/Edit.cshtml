@@ -1,0 +1,46 @@
+﻿@model DepartmentViewModel
+
+<h2 class="mb-4">Department Edit</h2>
+
+@{
+    var info = ViewData["info"];
+}
+@if (info != null)
+{
+    <div class="alert @(Convert.ToBoolean(ViewData["status"]) ? "alert-success" : "alert-danger")" role="alert">
+        @info
+    </div>
+}
+
+<form action="/Department/update" method="post">
+    <input type="hidden" name="Id" value="@Model.Id" />
+
+    <div class="mb-3">
+        <label class="form-label">Department Code:</label>
+        <input type="text" class="form-control" name="Code" required value="@Model.Code" placeholder="Enter department code">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Description:</label>
+        <input type="text" class="form-control" name="Description" required value="@Model.Description" placeholder="Enter department description">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Extension Phone:</label>
+        <input type="tel" class="form-control" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" name="ExtensionPhone" required value="@Model.ExtensionPhone" placeholder="Format: 123-45-678">
+        <small class="text-muted">Format: 123-45-678</small>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Created On:</label>
+        <input type="text" class="form-control" value="@Model.CreatedOn" readonly name="CreatedOn">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Modified On:</label>
+        <input type="text" class="form-control" value="@Model.UpdatedOn" readonly>
+    </div>
+
+    <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Update</button>
+    <a href="/Department/list" class="btn btn-outline-primary"><i class="fas fa-list"></i> View List</a>
+</form>

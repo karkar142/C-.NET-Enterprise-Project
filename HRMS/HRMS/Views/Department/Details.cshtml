@@ -1,0 +1,47 @@
+﻿@model DepartmentViewModel
+<a href="/department/list" class="btn btn-primary mb-3">
+    <i class="fas fa-list"></i> Department List
+</a>
+<h1>Department Details</h1>
+
+<div>
+    <h3>@Model.Code - @Model.Description</h3> <!-- Department Name -->
+    <p><strong>Extension Phone:</strong> @Model.ExtensionPhone</p>
+    <p><strong>Total Employees:</strong> @Model.TotalEmployees</p>
+</div>
+
+<h4>Employees in this Department</h4>
+@if (Model.Employees != null && Model.Employees.Any())
+{
+    <table class="table table-striped">
+        @{
+            int i = 1;
+        }
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Department</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Position</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model.Employees)
+            {
+                <tr>
+                    <td>@i</td>
+                    <td>@Model.Description</td> <!-- Display Department Name -->
+                    <td>@employee.Name</td>
+                    <td>@employee.Email</td>
+                    <td>@employee.PositionInfo</td> <!-- Display Position Name -->
+                </tr>
+                i++;
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <div class="alert alert-warning">No employees found for this department.</div>
+}

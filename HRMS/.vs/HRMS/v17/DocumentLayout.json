@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\reportings\\reporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\reportings\\reporting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\models\\reportmodels\\employeedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\models\\reportmodels\\employeedetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\controllers\\employeereportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\employeereportcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\reportings\\ireproting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\reportings\\ireproting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\utilities\\reporthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\utilities\\reporthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\views\\employeereport\\employeedetailreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\views\\employeereport\\employeedetailreport.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\views\\shared\\_layouthr.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\views\\shared\\_layouthr.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|d:\\it course\\c# enterprise\\hrms\\hrms\\hrms\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{860F923C-2829-4E65-B141-519555A4ED6C}|HRMS\\HRMS.csproj|solutionrelative:hrms\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_LayoutHR.cshtml",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Views\\Shared\\_LayoutHR.cshtml",
+              "RelativeDocumentMoniker": "HRMS\\Views\\Shared\\_LayoutHR.cshtml",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Views\\Shared\\_LayoutHR.cshtml",
+              "RelativeToolTip": "HRMS\\Views\\Shared\\_LayoutHR.cshtml",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAAAPUBAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T09:58:28.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeReportController.cs",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Controllers\\EmployeeReportController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\EmployeeReportController.cs",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Controllers\\EmployeeReportController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\EmployeeReportController.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAMwD8AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:48:19.526Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeeDetailReport.cshtml",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Views\\EmployeeReport\\EmployeeDetailReport.cshtml",
+              "RelativeDocumentMoniker": "HRMS\\Views\\EmployeeReport\\EmployeeDetailReport.cshtml",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Views\\EmployeeReport\\EmployeeDetailReport.cshtml",
+              "RelativeToolTip": "HRMS\\Views\\EmployeeReport\\EmployeeDetailReport.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T09:36:23.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ReportHelper.cs",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Utilities\\ReportHelper.cs",
+              "RelativeDocumentMoniker": "HRMS\\Utilities\\ReportHelper.cs",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Utilities\\ReportHelper.cs",
+              "RelativeToolTip": "HRMS\\Utilities\\ReportHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T09:37:31.193Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Reporting.cs",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Reportings\\Reporting.cs",
+              "RelativeDocumentMoniker": "HRMS\\Reportings\\Reporting.cs",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Reportings\\Reporting.cs",
+              "RelativeToolTip": "HRMS\\Reportings\\Reporting.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAADgAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:27:55.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IReproting.cs",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Reportings\\IReproting.cs",
+              "RelativeDocumentMoniker": "HRMS\\Reportings\\IReproting.cs",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Reportings\\IReproting.cs",
+              "RelativeToolTip": "HRMS\\Reportings\\IReproting.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:25:01.759Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeeDetail.cs",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Models\\ReportModels\\EmployeeDetail.cs",
+              "RelativeDocumentMoniker": "HRMS\\Models\\ReportModels\\EmployeeDetail.cs",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Models\\ReportModels\\EmployeeDetail.cs",
+              "RelativeToolTip": "HRMS\\Models\\ReportModels\\EmployeeDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:17:13.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "HRMS\\Controllers\\EmployeeController.cs",
+              "ToolTip": "D:\\IT course\\C# Enterprise\\HRMS\\HRMS\\HRMS\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "HRMS\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwDwAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T05:15:40.437Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
